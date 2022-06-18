@@ -241,7 +241,8 @@ class YoutubePlayerController {
   void seekTo(Duration position, {bool allowSeekAhead = true}) {
     invokeJavascript('seekTo(${position.inSeconds},$allowSeekAhead)');
     play();
-    add(_value.copyWith(position: position));
+    // FIXME: Delete for getting current video position
+    // add(_value.copyWith(position: position));
   }
 
   /// Sets the size in pixels of the player.
