@@ -1,4 +1,28 @@
 # Changelog
+## 5.1.2
+**Apr 12, 2024**
+- Bumps dependency to latest version.
+- Updates minimum supported SDK version to Flutter 3.19.0/Dart 3.3.0.
+
+## 5.1.1
+**Feb 21, 2024**
+- Improves pub score.
+
+## 5.1.0
+**Feb 21, 2024**
+- Bumps dependency to latest version.
+
+## 5.0.0
+**Dec 20, 2023**
+- Bumps dependency to latest version.
+- Adds support for wasm.
+- Bumps flutter version to `>=3.18.0-0`.
+- Fixes issue using `WebViewWidget` from `webview_flutter` package, together with the package.
+
+## 4.0.4
+**Jan 29, 2023**
+- Fixed platform listing in pub.dev
+
 ## 4.0.3
 **Jan 29, 2023**
 - Endorse `youtube_player_iframe_web` as default web implementation package.
