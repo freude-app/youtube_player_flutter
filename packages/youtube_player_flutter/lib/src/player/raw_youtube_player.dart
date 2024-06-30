@@ -278,7 +278,25 @@ class _RawYoutubePlayerState extends State<RawYoutubePlayer>
                     },
                     events: {
                         onReady: function(event) { window.flutter_inappwebview.callHandler('Ready'); },
-                        onStateChange: function(event) { sendPlayerStateChange(event.data); },
+                        onStateChange: function(event) {
+                          // Hide top title div
+                          const player = document.getElementById("player");
+                          for (let element of player.contentWindow.document.getElementsByClassName("ytp-chrome-top"))
+                          {
+                            element.style.display="none";
+                          }
+                          // Hide pause overlay(more video overlay) 
+                          for (let element of player.contentWindow.document.getElementsByClassName("ytp-pause-overlay"))
+                          {
+                            element.style.display="none";
+                          }
+                          // Hide caption
+                          for (let element of player.contentWindow.document.getElementsByClassName("ytp-caption-window-container"))
+                          {
+                            element.style.display="none";
+                          }
+                          sendPlayerStateChange(event.data);
+                        },
                         onPlaybackQualityChange: function(event) { window.flutter_inappwebview.callHandler('PlaybackQualityChange', event.data); },
                         onPlaybackRateChange: function(event) { window.flutter_inappwebview.callHandler('PlaybackRateChange', event.data); },
                         onError: function(error) { window.flutter_inappwebview.callHandler('Errors', error.data); }
