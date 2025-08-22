@@ -1,3 +1,13 @@
+## 3.1.1
+- Bumps dependencies.
+
+## 3.1.0
+- Updates minimum supported SDK version to Flutter 3.24/Dart 3.5.
+
+## 3.0.3
+- Bumps dependencies.
+- Removes `http` as direct dependency.
+
 ## 3.0.2
 - Use `credentialless` `iframe`, to allow videos to play in pages with
   `Cross-Origin-Embedder-Policy` set.
