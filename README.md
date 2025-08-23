@@ -1,6 +1,7 @@
-<p align="center">
 # Youtube Player for Freude-app
 please search FIXME tag in this repo.
+
+<p align="center">
 
 <img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/screenshots/logo.png" height="100" alt="Youtube Player iFrame" />
 </p>
