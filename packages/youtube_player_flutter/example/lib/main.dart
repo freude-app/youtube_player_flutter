@@ -29,7 +29,7 @@ class YoutubePlayerDemoApp extends StatelessWidget {
       theme: ThemeData(
         colorSchemeSeed: Colors.blue,
         appBarTheme: const AppBarTheme(
-          color: Colors.blueAccent,
+          backgroundColor: Colors.blueAccent,
           titleTextStyle: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w300,
@@ -167,13 +167,6 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       builder: (context, player) => Scaffold(
         appBar: AppBar(
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 12.0),
-            child: Image.asset(
-              'assets/ypf.png',
-              fit: BoxFit.fitWidth,
-            ),
-          ),
           title: const Text(
             'Youtube Player Flutter',
             style: TextStyle(color: Colors.white),
