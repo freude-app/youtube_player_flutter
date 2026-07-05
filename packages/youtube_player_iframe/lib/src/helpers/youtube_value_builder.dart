@@ -1,5 +1,5 @@
 // Copyright 2020 Sarbagya Dhaubanjar. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by a BSD-3-Clause license that can be
 // found in the LICENSE file.
 
 import 'dart:async';
@@ -54,6 +54,7 @@ class _YoutubeValueBuilderState extends State<YoutubeValueBuilder> {
   @override
   void didUpdateWidget(YoutubeValueBuilder oldWidget) {
     super.didUpdateWidget(oldWidget);
+    _child = widget.builder(context, _previousValue);
     final oldController = oldWidget.controller ?? context.ytController;
     final currentController = widget.controller ?? oldController;
     if (oldController != currentController) {
@@ -89,17 +90,14 @@ class _YoutubeValueBuilderState extends State<YoutubeValueBuilder> {
   Widget build(BuildContext context) => _child;
 
   void _subscribe() {
-    _subscription = _controller!.listen(
-      (value) {
-        if (widget.buildWhen?.call(_previousValue, value) ?? true) {
-          if (!mounted) return;
-          _child = widget.builder(context, value);
-          setState(() {});
-        }
-        _previousValue = value;
-      },
-      onError: (e) => log(e.toString()),
-    );
+    _subscription = _controller!.listen((value) {
+      if (widget.buildWhen?.call(_previousValue, value) ?? true) {
+        if (!mounted) return;
+        _child = widget.builder(context, value);
+        setState(() {});
+      }
+      _previousValue = value;
+    }, onError: (e) => log(e.toString()));
   }
 
   void _unsubscribe() {

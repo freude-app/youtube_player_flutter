@@ -1,172 +1,222 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/screenshots/logo.png" height="100" alt="Youtube Player iFrame" />
+<img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/misc/ypi.webp" width="250" alt="Youtube Player iFrame" />
 </p>
+
 <h2 align="center">Youtube Player iFrame</h2>
 
+<p align="center">
+Embed YouTube videos in your Flutter app with full control over playback. Powered by the official <a href="https://developers.google.com/youtube/iframe_api_reference">iFrame Player API</a>. No API key required.
+</p>
 
 <p align="center">
-<a href="https://pub.dev/packages/youtube_player_iframe"><img src="https://img.shields.io/pub/v/youtube_player_iframe" alt="Pub"></a>
+<a href="https://pub.dev/packages/youtube_player_iframe"><img src="https://img.shields.io/pub/v/youtube_player_iframe" alt="pub"></a>
 <a href="https://youtube.sarbagyastha.com.np"><img src="https://img.shields.io/badge/Web-Demo-deeppink.svg" alt="Web Demo"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter/blob/main/packages/youtube_player_iframe/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-blueviolet" alt="BSD-3 License"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter"><img src="https://img.shields.io/github/languages/top/sarbagyastha/youtube_player_flutter?color=9cf" alt="Top Language"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter/issues"><img src="https://img.shields.io/github/issues/sarbagyastha/youtube_player_flutter" alt="GitHub issues"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter"><img src="https://img.shields.io/github/stars/sarbagyastha/youtube_player_flutter" alt="Stars"></a>
+<a href="https://github.com/sarbagyastha/youtube_player_flutter/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-blueviolet" alt="BSD-3 License"></a>
+<a href="https://github.com/sarbagyastha/youtube_player_flutter"><img src="https://img.shields.io/github/stars/sarbagyastha/youtube_player_flutter?color=deeppink" alt="Stars"></a>
 </p>
 
 ---
 
-Flutter plugin for seamlessly playing or streaming YouTube videos inline using the official [**iFrame Player API**](https://developers.google.com/youtube/iframe_api_reference). This package offers extensive customization by exposing nearly the full range of the iFrame Player API's features, ensuring complete flexibility and control.
+## Features
 
-<a href="https://youtube.sarbagyastha.com.np"><img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/screenshots/demo.png" width="200" alt="Demo Screenshot"></a>
+- **Inline playback**: videos play inside your app, no pop-outs
+- **No API key**: just plug in a video ID and go
+- **Custom controls**: build your own UI with `YoutubeValueBuilder`
+- **Playlists**: native YouTube playlists and custom lists
+- **Lazy thumbnails**: show a thumbnail first, create the player only on tap (great for lists)
+- **Fullscreen**: handles rotation, swipe gestures, and back button automatically
+- **Live stream support**
+- **Metadata retrieval**: title, author, duration, and more
+- **Adjustable playback speed**
+- **Privacy-enhanced mode**: uses `youtube-nocookie.com` by default
+- **Multi-platform**: Android, iOS, macOS, and Web
 
-
-## Features 🌟<p align="center">
-<img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/screenshots/logo.png" height="100" alt="Youtube Player iFrame" />
-</p>
-<h2 align="center">Youtube Player iFrame</h2>
-
-
-<p align="center">
-<a href="https://pub.dev/packages/youtube_player_iframe"><img src="https://img.shields.io/pub/v/youtube_player_iframe" alt="Pub"></a>
-<a href="https://youtube.sarbagyastha.com.np"><img src="https://img.shields.io/badge/Web-Demo-deeppink.svg" alt="Web Demo"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter/blob/main/packages/youtube_player_iframe/LICENSE"><img src="https://img.shields.io/badge/License-BSD--3-blueviolet" alt="BSD-3 License"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter"><img src="https://img.shields.io/github/languages/top/sarbagyastha/youtube_player_flutter?color=9cf" alt="Top Language"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter/issues"><img src="https://img.shields.io/github/issues/sarbagyastha/youtube_player_flutter" alt="GitHub issues"></a>
-<a href="https://github.com/sarbagyastha/youtube_player_flutter"><img src="https://img.shields.io/github/stars/sarbagyastha/youtube_player_flutter" alt="Stars"></a>
-</p>
+> Built on [webview_flutter](https://pub.dev/packages/webview_flutter). For a ready-made player with built-in controls, see [youtube_player_flutter](https://pub.dev/packages/youtube_player_flutter).
 
 ---
 
-Flutter plugin for seamlessly playing or streaming YouTube videos inline using the official [**iFrame Player API**](https://developers.google.com/youtube/iframe_api_reference). This package offers extensive customization by exposing nearly the full range of the iFrame Player API's features, ensuring complete flexibility and control.
+## Installation
 
-<a href="https://youtube.sarbagyastha.com.np"><img src="https://raw.githubusercontent.com/sarbagyastha/youtube_player_flutter/main/packages/youtube_player_iframe/screenshots/demo.png" width="200" alt="Demo Screenshot"></a>
+```
+flutter pub add youtube_player_iframe
+```
 
+Check [webview_flutter's setup guide](https://pub.dev/packages/webview_flutter) for any platform-specific configuration.
 
-## Features 🌟
-- ▶️ **Inline Playback**: Provides seamless inline video playback within your app.
-- 🎬 **Caption Support**: Fully supports captions for enhanced accessibility.
-- 🔑 **No API Key Required**: Easily integrates without the need for an API key.
-- 🎛️ **Custom Controls**: Offers extensive support for custom video controls.
-- 📊 **Metadata Retrieval**: Capable of retrieving detailed video metadata.
-- 📡 **Live Stream Support**: Compatible with live streaming videos.
-- ⏩ **Adjustable Playback Rate**: Allows users to change the playback speed.
-- 🛠️ **Custom Control Builders**: Exposes builders for creating bespoke video controls.
-- 🎵 **Playlist Support**: Supports both custom playlists and YouTube's native playlist feature.
-- 📱 **Fullscreen Gestures**: Enables fullscreen gestures, such as swiping up or down to enter or exit fullscreen mode.
+---
 
+## Quick Start
 
-This package uses [webview_flutter](https://pub.dev/packages/webview_flutter) under-the-hood.
-
-## Setup
-See [**webview_flutter**'s doc](https://pub.dev/packages/webview_flutter) for the requirements.
-
-### Using the player
-Start by creating a controller.
+### 1. Create a controller
 
 ```dart
-final _controller = YoutubePlayerController(
-  params: YoutubePlayerParams(
-    mute: false,
+final controller = YoutubePlayerController(
+  params: const YoutubePlayerParams(
     showControls: true,
     showFullscreenButton: true,
+    mute: false,
   ),
 );
 
-_controller.loadVideoById(...); // Auto Play
-_controller.cueVideoById(...); // Manual Play
-_controller.loadPlaylist(...); // Auto Play with playlist
-_controller.cuePlaylist(...); // Manual Play with playlist
+controller.loadVideoById(videoId: '<video-id>'); // auto-play
+controller.cueVideoById(videoId: '<video-id>');  // ready but paused
+```
 
-// If the requirement is just to play a single video.
-final _controller = YoutubePlayerController.fromVideoId(
+For a single video, use the shorthand constructor:
+
+```dart
+final controller = YoutubePlayerController.fromVideoId(
   videoId: '<video-id>',
   autoPlay: false,
   params: const YoutubePlayerParams(showFullscreenButton: true),
 );
 ```
 
-Then the player can be used in two ways:
-
-#### Using `YoutubePlayer`
-This widget can be used when fullscreen support is not required.
+### 2. Add the player widget
 
 ```dart
 YoutubePlayer(
-  controller: _controller,
+  controller: controller,
   aspectRatio: 16 / 9,
-);
-
+)
 ```
 
-#### Using `YoutubePlayerScaffold`
-This widget can be used when fullscreen support for the player is required.
+### 3. Dispose when done
 
 ```dart
-YoutubePlayerScaffold(
-  controller: _controller,
+@override
+void dispose() {
+  controller.close();
+  super.dispose();
+}
+```
+
+---
+
+## Fullscreen
+
+Fullscreen works automatically on all platforms. The player handles the transition entirely inside Flutter with no extra configuration needed.
+
+| Action | Result |
+|---|---|
+| Tap the fullscreen button | Animates to fullscreen |
+| Rotate device to landscape | Auto-enters fullscreen (`autoFullScreen: true`) |
+| Swipe up on the player | Enters fullscreen |
+| Swipe down in fullscreen | Exits fullscreen |
+| Back button / system gesture | Exits fullscreen |
+
+---
+
+## Lazy Thumbnails (Perfect for Lists)
+
+Don't spin up a WebView for every item in a list; that's slow and memory-hungry. `YoutubePlayerThumbnail` shows a static thumbnail image and only creates the player when the user taps it.
+
+```dart
+YoutubePlayerThumbnail(
+  controller: YoutubePlayerController.fromVideoId(videoId: '<video-id>'),
   aspectRatio: 16 / 9,
-  builder: (context, player) {
-    return Column(
-      children: [
-        player,
-        Text('Youtube Player'),
-      ],
+  thumbnailQuality: ThumbnailQuality.high,
+  thumbnailFormat: ThumbnailFormat.webp,
+)
+```
+
+Just want the thumbnail URL?
+
+```dart
+final url = YoutubePlayerController.getThumbnail(
+  videoId: '<video-id>',
+  quality: ThumbnailQuality.high,
+  format: ThumbnailFormat.webp,
+);
+```
+
+---
+
+## Custom Controls
+
+`YoutubeValueBuilder` rebuilds whenever the player state changes. Use it to build any playback control you need:
+
+```dart
+YoutubeValueBuilder(
+  controller: controller,
+  builder: (context, value) {
+    return IconButton(
+      icon: Icon(
+        value.playerState == PlayerState.playing
+            ? Icons.pause
+            : Icons.play_arrow,
+      ),
+      onPressed: value.isReady
+          ? () {
+              value.playerState == PlayerState.playing
+                  ? controller.pause()
+                  : controller.play();
+            }
+          : null,
     );
   },
 )
 ```
 
-See the [example app](example/lib/main.dart) for detailed usage.
+---
 
-## Inherit the controller to descendant widgets
-The package provides `YoutubePlayerControllerProvider`.
+## Sharing the Controller
+
+Use `YoutubePlayerControllerProvider` to make the controller available anywhere in the widget tree via `context.ytController`, without passing it down manually:
 
 ```dart
 YoutubePlayerControllerProvider(
-  controller: _controller,
-  child: Builder(
-    builder: (context){
-      // Access the controller as: 
-      // `YoutubePlayerControllerProvider.of(context)` 
-      // or `controller.ytController`.
-    },
+  controller: controller,
+  child: Scaffold(
+    body: Column(
+      children: [
+        YoutubePlayer(controller: controller),
+        const MyCustomControls(), // uses context.ytController internally
+      ],
+    ),
   ),
-);
+)
 ```
 
-## Want to customize the player?
-The package provides `YoutubeValueBuilder`, which can be used to create any custom controls.
+---
 
-For example, let's create a custom play pause button.
+## Player Parameters
+
+Customise the player behaviour via `YoutubePlayerParams`:
+
+| Parameter | Type | Default | Description |
+|---|---|---|---|
+| `mute` | `bool` | `false` | Start muted |
+| `showControls` | `bool` | `true` | Show YouTube's built-in controls |
+| `showFullscreenButton` | `bool` | `false` | Show YouTube's fullscreen button |
+| `privacyEnhancedMode` | `bool` | `true` | Use `youtube-nocookie.com` |
+| `loop` | `bool` | `false` | Loop the video |
+| `enableCaption` | `bool` | `true` | Show captions |
+| `captionLanguage` | `String` | `'en'` | Caption language (ISO 639-1) |
+| `interfaceLanguage` | `String` | `'en'` | Player UI language (ISO 639-1) |
+| `strictRelatedVideos` | `bool` | `false` | Limit related videos to same channel |
+| `color` | `String` | `'white'` | Progress bar colour (`'red'` or `'white'`) |
+| `playsInline` | `bool` | `true` | Inline playback on iOS |
+| `userAgent` | `String?` | `null` | Custom WebView user agent |
+
+Use `copyWith` to update an existing config:
+
 ```dart
-YoutubeValueBuilder(
-   controller: _controller, // This can be omitted, if using `YoutubePlayerControllerProvider`
-   builder: (context, value) {
-      return IconButton(
-         icon: Icon( 
-           value.playerState == PlayerState.playing
-             ? Icons.pause
-             : Icons.play_arrow,
-         ),
-         onPressed: value.isReady
-            ? () {
-              value.playerState == PlayerState.playing
-                ? context.ytController.pause()
-                : context.ytController.play();
-              }
-            : null,
-      );
-   },
-);
+final updated = params.copyWith(mute: true);
 ```
 
-## Contributors
+---
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
+## Example
 
-<!-- markdownlint-restore -->
-<!-- prettier-ignore-end -->
+See the [example app](example/lib/main.dart) for a complete working demo, including playlists, custom controls, and metadata.
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+---
+
+## License
+
+BSD-3-Clause. See [LICENSE](https://github.com/sarbagyastha/youtube_player_flutter/blob/main/LICENSE) for details.
+
+This package uses the [YouTube IFrame Player API](https://developers.google.com/youtube/iframe_api_reference). By using this package, you agree to the [YouTube API Services Terms of Service](https://developers.google.com/youtube/terms/api-services-tos).
+
+API method documentation is adapted from the [YouTube IFrame Player API Reference](https://developers.google.com/youtube/iframe_api_reference), © Google LLC, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
