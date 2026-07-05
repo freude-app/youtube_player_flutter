@@ -1,5 +1,43 @@
 # Changelog
 
+## 6.0.2
+**May 31, 2026**
+
+- Patch release to trigger pub.dev documentation refresh.
+
+## 6.0.1
+**May 31, 2026**
+
+- Adds `credentialless` to `YoutubePlayerController` and `YoutubePlayerController.fromVideoId`. On web, enables credentialless iframe mode for pages with `Cross-Origin-Embedder-Policy` set.
+- Adds `videoStateUpdateInterval` to `YoutubePlayerParams`. Controls how often (in milliseconds) the player polls for current time and loaded fraction while playing. Defaults to `100` (10 Hz), preserving existing behaviour.
+- Improves fullscreen-on-rotate transitions. The overlay now animates smoothly when the device rotates into and out of landscape.
+- Fixes fullscreen button not appearing on Web.
+- Fixes `videoUrl` getter returning a quote-wrapped string on some platforms.
+- Fixes `playlist` and `availablePlaybackRates` throwing a `FormatException` when called before a playlist or video is loaded.
+- Fixes null crash when `getPlaylist` returns an empty response.
+- Broadens `loadVideo` to accept all YouTube URL formats: watch, `youtu.be`, `/shorts/`, `/embed/`, and `music.youtube.com`.
+- Removes the deprecated `modestbranding` player parameter (dropped by YouTube in 2023).
+- Improves documentation for `PlayerState` and `YoutubeError` enums.
+
+## 6.0.0
+**May 16, 2026**
+
+**Breaking Changes**
+- Removes `YoutubePlayerScaffold`. Use `YoutubePlayer` directly. Fullscreen is now handled internally. See the migration guide in the README.
+- Bumps minimum Flutter version to `>=3.38.0` / Dart SDK `^3.10.0`.
+
+**New Features**
+- Fullscreen navigation is no longer broken. Entering and exiting fullscreen is now smooth and works correctly across all supported platforms. Auto-enters fullscreen on landscape rotation; supports swipe-up/down gesture.
+- Adds `YoutubePlayerThumbnail` widget. Shows the video thumbnail and only creates the WebView when the user taps, making it ideal for lists.
+- Adds `privacyEnhancedMode` to `YoutubePlayerParams` (default `true`). Uses `youtube-nocookie.com` so YouTube won't track visitors unless they play the video.
+- Adds `copyWith` to `YoutubePlayerParams`.
+- Adds `ThumbnailQuality` and `ThumbnailFormat` enums for `YoutubePlayerController.getThumbnail`.
+- Adds macOS support.
+- Fixes fullscreen button handling on mobile platforms.
+- Fixes event propagation on fullscreen button click.
+- Fixes player not resizing correctly after orientation change.
+- Fixes null `videoId` crash in controller.
+
 ## 5.2.2
 **Aug 7, 2025**
 - Bumps dependency to latest version.

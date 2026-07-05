@@ -1,10 +1,12 @@
 // Copyright 2020 Sarbagya Dhaubanjar. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
+// Use of this source code is governed by a BSD-3-Clause license that can be
 // found in the LICENSE file.
 
-/// Youtube Errors
+/// Error codes reported by the YouTube IFrame API.
+///
+/// Check `YoutubePlayerValue.error`; it is [YoutubeError.none] when there is no error.
 enum YoutubeError {
-  /// Error Free
+  /// No error.
   none(0),
 
   /// The request contains an invalid parameter value.
@@ -25,35 +27,30 @@ enum YoutubeError {
   /// The requested video couldn't be found.
   cannotFindVideo(105),
 
-  /// This error is the same as [YoutubeError.notEmbeddable] in disguise!
+  /// Same restriction as [YoutubeError.notEmbeddable]; YouTube returns code 150.
   sameAsNotEmbeddable(150),
 
-  /// Unknown Error
+  /// Same restriction as [YoutubeError.notEmbeddable]; YouTube returns code 152.
+  sameAsNotEmbeddable2(152),
+
+  /// An unrecognised error code was returned.
   unknown(-1);
 
-  /// Returns the [YoutubeError] from the given code.
   const YoutubeError(this.code);
 
-  /// Code of the error.
+  /// The raw code returned by the YouTube IFrame API.
   final int code;
-}
 
-///
-YoutubeError errorEnum(int errorCode) {
-  switch (errorCode) {
-    case 2:
-      return YoutubeError.invalidParam;
-    case 5:
-      return YoutubeError.html5Error;
-    case 100:
-      return YoutubeError.videoNotFound;
-    case 101:
-      return YoutubeError.notEmbeddable;
-    case 105:
-      return YoutubeError.cannotFindVideo;
-    case 150:
-      return YoutubeError.sameAsNotEmbeddable;
-    default:
-      return YoutubeError.unknown;
-  }
+  /// Returns the [YoutubeError] matching [code], or [YoutubeError.unknown] if unrecognised.
+  static YoutubeError fromCode(int code) => switch (code) {
+    0 => .none,
+    2 => .invalidParam,
+    5 => .html5Error,
+    100 => .videoNotFound,
+    101 => .notEmbeddable,
+    105 => .cannotFindVideo,
+    150 => .sameAsNotEmbeddable,
+    152 => .sameAsNotEmbeddable2,
+    _ => .unknown,
+  };
 }
